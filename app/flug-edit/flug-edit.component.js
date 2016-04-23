@@ -26,10 +26,12 @@ System.register(['angular2/core', 'angular2/router', '../services/flug.service']
         execute: function() {
             FlugEditComponent = (function () {
                 function FlugEditComponent(flugService, routeParams) {
-                    var _this = this;
                     this.flugService = flugService;
                     this.info = "FlugEdit";
                     this.id = routeParams.get('id');
+                }
+                FlugEditComponent.prototype.ngOnInit = function () {
+                    var _this = this;
                     this.flugService
                         .findById(this.id)
                         .subscribe(function (flug) {
@@ -39,7 +41,7 @@ System.register(['angular2/core', 'angular2/router', '../services/flug.service']
                         console.error(err);
                         _this.message = err.text();
                     });
-                }
+                };
                 FlugEditComponent.prototype.save = function () {
                     var _this = this;
                     this.flugService

@@ -12,6 +12,10 @@
             required
             minlength="3"
             maxlength="30">
+
+        <div>
+            {{von | ort:'long'}}
+        </div>
             
             
         <div *ngIf="!f?.controls?.von?.valid && !f?.controls?.von?.pending">

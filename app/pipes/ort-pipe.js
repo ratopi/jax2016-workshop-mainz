@@ -23,27 +23,29 @@ System.register(['angular2/core'], function(exports_1, context_1) {
                 function OrtPipe() {
                 }
                 OrtPipe.prototype.transform = function (value, args) {
+                    var NAMES = {
+                        'Graz': {
+                            long: "Flughafen Graz-Thalerhof",
+                            short: "GRZ"
+                        },
+                        'Hamburg': {
+                            long: "Airport Hamburg",
+                            short: "HAM"
+                        },
+                        'Frankfurt': {
+                            long: "Airport Frankfurt Rhein-Main",
+                            short: "FRA"
+                        }
+                    };
                     var fmt = args[0]; // short, long
-                    var long, short;
-                    switch (value) {
-                        case 'Graz':
-                            long = "Flughafen Graz-Thalerhof";
-                            short = "GRZ";
-                            break;
-                        case 'Hamburg':
-                            long = "Airport Hamburg";
-                            short = "HAM";
-                            break;
-                        case 'Frankfurt':
-                            long = "Airport Frankfurt";
-                            short = "FRA";
-                            break;
-                        default:
-                            long = short = "ROM";
-                    }
-                    if (fmt == 'short')
-                        return short;
-                    return long;
+                    console.log(args);
+                    var o = NAMES[value];
+                    var result = o ? o[fmt] : value;
+                    result = result ? result : value;
+                    console.log(result);
+                    console.log(fmt);
+                    console.log(o);
+                    return result;
                 };
                 OrtPipe = __decorate([
                     core_1.Pipe({
