@@ -25,7 +25,8 @@ System.register(['angular2/platform/browser', './app', 'angular2/http', 'angular
                 // FlugService --> MockFlugService
                 // FlugService --> ExtFlugService
                 router_1.ROUTER_PROVIDERS,
-                http_1.HTTP_PROVIDERS
+                http_1.HTTP_PROVIDERS,
+                router_1.HashLocationStrategy
             ];
             browser_1.bootstrap(app_1.AppComponent, providers);
         }
