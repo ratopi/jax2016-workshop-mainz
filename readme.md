@@ -6,12 +6,10 @@
 - TypeScript: npm install typescript -g
 - Live-Server: npm install live-server -g
 
-## Herunterlade der Bibliotheken
+## Herunterladen der Bibliotheken
 
 ``npm install`` 
 
 ## Start
 
 - live-server
-
-
